@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<title>MultiAPI - Sign up</title>
+<link rel="stylesheet" href="{% static "login.css" %}">
+{% endblock head %}
+
+{% block content %}
+<form action="" method="post" novalidate>
+	<div id="chooseForm">
+		<span onclick="goto('login')">Se connecter</span>
+		<span class="selected">S'inscrire</span>
+	</div>
+	
+	<div class="fields">
+  {{ form.as_p }}
+	</div>
+	<input type="submit" value="Envoyer" />
+	{% csrf_token %} 
+</form>
+{% endblock content %}

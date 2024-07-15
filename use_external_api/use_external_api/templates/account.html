@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+  <title>MultiAPI - Account</title>
+  <link rel="stylesheet" href="{% static "home.css" %}">
+  <link rel="stylesheet" href="{% static "lists.css" %}">
+{% endblock head %}
+
+{% block content %}
+  <h2>Bonjour {{user}}</h2>
+  <h3>Vos équipes préférés</h3>
+  <div id="sports" class="cardList">
+    {% for team in teams %}
+      <div class="card">
+        <span class="title">{{ team.name }}</span>
+        <img src="{{ team.logo }}" alt="">
+        <div class="infos">
+          <span class="rating">{{ team.stade }}</span>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+
+  <h3>Vos produits préférés</h3>
+  <div id="marvel" class="cardList">
+    {% for product in products %}
+      <div class="card">
+        <span class="title">{{ product.product_name }}</span>
+        <img src="{{ product.image_front_small_url }}" alt="">
+      </div>
+    {% endfor %}
+  </div>
+
+    
+  <h3>Vos anime préférés</h3>
+  <div id="animes" class="cardList">
+    {% for anime in animes %}
+      <div class="card">
+        <span class="title">{{ anime.title }}</span>
+        <img src="{{ anime.img }}" alt="">
+        <div class="infos">
+          <span class="rating">{{ anime.year }}</span>
+          <span class="rating">{{ anime.genre }}</span>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <h3>Vos marvel préférés</h3>
+  <div id="marvel" class="cardList">
+    {% for character in characters %}
+      <div class="card">
+        <span class="title">{{ character.name }}</span>
+        <img src="{{ character.img }}" alt="">
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}

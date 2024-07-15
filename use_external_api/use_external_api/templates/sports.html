@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+  <title>MultiAPI - Sports</title>
+  <link rel="stylesheet" href="{% static "lists.css" %}">
+{% endblock head %}
+
+{% block content %}
+  <h1>Tous les sports</h1>
+  <div id="sports" class="cardList">
+  {% for team in teams %}
+    <div class="card">
+      <span class="title">{{ team.name }}</span>
+      <img src="{{ team.logo }}" alt="">
+      <div class="infos">
+        <span class="rating">{{ team.stade }}</span>
+        {% if user.is_authenticated %}
+          {%if team.isLiked %}
+          <i class="fa-solid fa-heart" onclick="unlike('{{team.id}}', 'team', '{{ csrf_token }}')"></i>
+          {% else %}
+          <i class="fa-regular fa-heart" onclick="like('{{team.id}}', 'team', '{{ csrf_token }}')"></i>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock content %}

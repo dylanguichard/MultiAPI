@@ -1,0 +1,12 @@
+MyAnimeList
+TROP COMPLIQUE on abandonne
+
+Jinkan --> Ultra simple (rien à faire)
+
+OpenFoodFact --> Fonctionne mais un peu compliqué, le wrapper python fonctionne mais la doc est nulle il faut voir mon code pour comprendre
+
+api-football --> 30req/min 100/jour/sport,  plusieurs clés ou plusieurs sports ? 
+
+Marvel API --> Création compte (gratuit) get API KEY & les req doivent fournir un TimeStamp et un hash (md5.fr --> (ts+privateKey+publicKey)
+
+TMDB (film)

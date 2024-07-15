@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+  <title>MultiAPI - Anime</title>
+  <link rel="stylesheet" href="{% static "lists.css" %}">
+{% endblock head %}
+
+{% block content %}
+  <h1>Tous les personnages</h1>
+  <div id="marvel" class="cardList">
+  {% for character in characters %}
+    <div class="card">
+      <span class="title">{{ character.name }}</span>
+      <img src="{{ character.img }}" alt="">
+      {% if user.is_authenticated %}
+      <div class="infos">
+          {%if character.isLiked%}
+          <i class="fa-solid fa-heart" onclick="unlike('{{character.id}}', 'marvel', '{{ csrf_token }}')"></i>
+          {% else %}
+          <i class="fa-regular fa-heart" onclick="like( '{{character.id}}', 'marvel', '{{ csrf_token }}')"></i>
+          {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+  </div>
+{% endblock content %}

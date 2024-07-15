@@ -1,0 +1,45 @@
+.cardList {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 20px;
+	width: 100%;
+}
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	width: 15%;
+	border: 1px solid #222;
+	border-radius: 8px;
+	background-color: #eee;
+	box-shadow: 5px 5px 5px -5px;
+}
+.card .title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 2.4em;
+	font-size: 1em;
+	padding: 0 10px;
+	font-weight: bold;
+}
+
+.card img {
+	width: 100%;
+	height: 60%;
+	object-fit: cover;
+}
+.card .infos {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10px;
+}
+.card .infos i {
+	transition: all 0.2s;
+}
+.card .infos i:hover {
+	font-size: 1.2em;
+	cursor: pointer;
+}

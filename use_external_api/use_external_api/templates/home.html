@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+  <title>MultiAPI - Home</title>
+  <link rel="stylesheet" href="{% static "home.css" %}">
+{% endblock head %}
+
+{% block content %}
+
+  {% if user.is_authenticated %}
+    <h2>Bonjour {{user}}</h2>
+  {% else %}
+    <h2>Connectez vous pour profiter de toutes les fonctionnalités du site !</h2>
+    <div class="buttons">
+      <button onclick="goto('login')">Se connecter</button>
+      <button onclick="goto('signup')">S'inscrire</button>
+    </div>
+  {% endif %}
+
+  <h3>Venez nous dire tout ce que vous aimez</h3>
+  <div class="buttons">
+    <button onclick="goto('anime')">Anime</button>
+    <button onclick="goto('Sport')">Sport</button>
+    <button onclick="goto('Marvel')">Marvel</button>
+  </div>
+{% endblock content %}
