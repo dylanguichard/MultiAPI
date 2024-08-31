@@ -1,6 +1,10 @@
 # Consignes Projet API
 Projet par groupe (3 ou 4)
 
+## Lexique
+- API Application Programation Interface : Interface de programmation donnant accès à certaines données via des endpoints
+- Endpoints : Point d'accès de l'API sous la forme d'une adresse URL 
+
 ## 🎯 Objectif
 
 Créer une application complète en Python avec le framework Django qui utilisera des données fournies par une **API externe**. L'application devra stocker certaines données sur ses utilisateurs dans une base de données dédié.
@@ -30,7 +34,7 @@ L'application permet aux utilisateurs de voir les matchs à venir et leur propos
 ### 📁 Livrables attendus
 **En plus du code** quelques documents seront à rendre :
 - Un planning
-- Un document de conception
+- Un cahier des charges
   - Contient toutes les fonctionnalités prévu dans votre appli
   - Ce que peuvent faire les utilisateurs non connectés / connectés / autres roles (admin / superuser / ...) si besoin
   - Un diagramme de BDD (prévisionnel)
@@ -82,3 +86,28 @@ Utilisez les différents débugger quand vous avez des erreurs, si l'erreur vien
 ⚠️ Attention les utilisateurs géré par Django sont un peu particulier, les manipuler ou les modifier peut être difficile prenez le temps de **lire la doc** pour comprendre ce que vous faites.
 
 **Mettez git en place au plus vite**, mettez à jour votre repo local régulièrement et faites de petits commit, cela vous évitera de nombreux conflict
+
+### Organisez votre dev :
+- 3 axes pricipaux : 
+  - Appel API
+  - Backend (Gestion utilisateur & enregistrement de données)
+  - Front (templates & style)
+
+N'hésitez pas à travailler en binome (pair programming)
+- Facilite le dev
+- Partage la connaissance
+- Moins fatiguant
+
+Pensez à *mocker* les données si besoin, si vous n'arrivez pas à connecter rapidement l'API une personne peut quand même commencer le front avec de fausse données envoyer par le back.
+
+Commencez par le plus difficile (ici l'API et le Back), en gardant cet ordre logique en tête : Donnée > Fonctionnalités > Style
+
+Ne brulez pas les étapes, ne commencez pas les fonctionnalités avancées avant d'avoir les fonctionnalités de bases.
+
+## Liens utiles
+- Appel API en python :
+  - https://pythonds.linogaliana.fr/api/
+- Débuter avec Django :
+  - https://openclassrooms.com/fr/courses/7172076-debutez-avec-le-framework-django
+- Authentification avec Django  :
+  - https://docs.djangoproject.com/fr/4.2/topics/auth/default/
