@@ -97,12 +97,12 @@ class AccountView(TemplateView):
             if str(product['id']) in likedFoodId:
                 context['products'].append(product)
 
-        marvel = getCharacter(self.request)
-        for character in marvel:
+        # marvel = getCharacter(self.request)
+        # for character in marvel:
 
-            if str(character['id']) in likedMarvelId:
-                print(character)
-                context['characters'].append(character)
+        #     if str(character['id']) in likedMarvelId:
+        #         print(character)
+        #         context['characters'].append(character)
 
         return context
 

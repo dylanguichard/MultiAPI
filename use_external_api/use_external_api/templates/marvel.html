@@ -25,4 +25,14 @@
     </div>
   {% endfor %}
   </div>
+  <script>
+    document.body.onload = () => {
+      console.log("Coucou")
+      fetch("https://gateway.marvel.com/v1/public/characters?ts=1&apikey=eb79c3a5b07c45555c5af6c1ca4be64e&hash=5d78ad0af67862c3371c9a88a590eba6").then(res => {
+        res.json().then(chars => {
+          console.log(chars)
+        })
+      })
+    }
+  </script>
 {% endblock content %}

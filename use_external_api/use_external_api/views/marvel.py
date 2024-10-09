@@ -2,6 +2,7 @@ from typing import Any
 from django.views.generic import TemplateView
 import requests
 from .like import getLikesByType
+from marvel import Marvel
 
 
 class MarvelView(TemplateView):
@@ -14,11 +15,19 @@ class MarvelView(TemplateView):
 
 
 def getCharacter(request):
-    res = requests.get(
-        'https://gateway.marvel.com/v1/public/characters?ts=1&apikey=eb79c3a5b07c45555c5af6c1ca4be64e&hash=5d78ad0af67862c3371c9a88a590eba6').json()['data']['results']
+
     characters = []
+
+    m = Marvel("eb79c3a5b07c45555c5af6c1ca4be64e",
+               "19c715a294563ec5ede9d342f28a9af388d9b332")
+    allChars = m.characters.all().get("data").get("results")
+    print(allChars)
+
+    # NORMAL WAY
+    # res = requests.get(
+    #     'https://gateway.marvel.com/v1/public/characters?ts=1&apikey=eb79c3a5b07c45555c5af6c1ca4be64e&hash=5d78ad0af67862c3371c9a88a590eba6', verify=False).json()['data']['results']
     likes = getLikesByType(request=request, tag="marvel")
-    for char in res:
+    for char in allChars:
         characters.append({
             'id': char['id'],
             'name': char['name'],
