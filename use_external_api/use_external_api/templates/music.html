@@ -4,14 +4,24 @@
 {% block head %}
   <title>MultiAPI - Music</title>
   <link rel="stylesheet" href="{% static "lists.css" %}">
+  <link rel="stylesheet" href="{% static "music.css" %}">
+  <script src="{% static "audio.js" %}"></script> 
 {% endblock head %}
 
 {% block content %}
   <h1>Music</h1>
   <div id="animes" class="cardList">
-  {% for music in musics %}
+  {% for track in tracks %}
     <div class="card">
-      <span class="title">{{ music.title }}</span>
+      <span class="title">{{ track.title }}</span>
+      <img src="{{ track.artist_img }}" />
+      <span class="artist">{{ track.artist_name }}</span>
+      <div class="preview">
+        <audio src="{{ track.preview }}"></audio>
+        <div class="mediaBtn btnPlay"><i class="fa-solid fa-play"></i></div>
+        <div class="mediaBtn btnPause hidden"><i class="fa-solid fa-pause"></i></div>
+        
+      </div>
     </div>
   {% endfor %}
   </div>

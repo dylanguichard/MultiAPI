@@ -1,13 +1,15 @@
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   src: url(Montserrat.ttf);
 }
 
-body, input {
-  font-family: 'Montserrat';
+body,
+input {
+  font-family: "Montserrat";
   color: #222;
 }
-a, a:visited {
+a,
+a:visited {
   color: #333;
   text-decoration: none;
   position: relative;
@@ -33,7 +35,7 @@ a:not(.icon):hover::after {
 body {
   margin: 0;
   padding: 0;
-  background-color: #DDD;
+  background-color: #ddd;
 }
 
 header {
@@ -42,8 +44,8 @@ header {
   align-items: center;
   width: 80%;
   padding: 20px 10%;
-  background-color: #FFF;
-  box-shadow: 0 0 10px 0px;
+  background-color: #fff;
+  box-shadow: 0 0 10px 0px #000;
 }
 
 header h1 {
