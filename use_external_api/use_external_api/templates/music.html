@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+  <title>MultiAPI - Music</title>
+  <link rel="stylesheet" href="{% static "lists.css" %}">
+{% endblock head %}
+
+{% block content %}
+  <h1>Music</h1>
+  <div id="animes" class="cardList">
+  {% for music in musics %}
+    <div class="card">
+      <span class="title">{{ music.title }}</span>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock content %}

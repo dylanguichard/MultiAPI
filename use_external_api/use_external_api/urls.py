@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-from .views import HomeView, LoginView, SignUpView, AccountView, LogoutView, AnimeView, SportsView, MarvelView, FoodView, LikeView, UnlikeView
+from .views import HomeView, LoginView, SignUpView, AccountView, LogoutView, AnimeView, SportsView, MarvelView, FoodView, LikeView, UnlikeView, MusicView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,8 +33,8 @@ urlpatterns = [
     path('sports/', SportsView.as_view(), name="sports"),
     path('marvel/', MarvelView.as_view(), name="marvel"),
     path('food/', FoodView.as_view(), name="food"),
+    path('music/', MusicView.as_view(), name="music"),
 
     path('like/', LikeView.as_view()),
     path('unlike/', UnlikeView.as_view())
-
 ]

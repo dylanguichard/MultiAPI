@@ -4,4 +4,5 @@ from .anime import AnimeView
 from .sports import SportsView
 from .marvel import MarvelView
 from .food import FoodView
+from .music import MusicView
 from .like import LikeView, UnlikeView, getLikesByType
